@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>葵爸的安全座椅大横评 · 13款i-Size座椅按价格档对决</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#f5f7fa; color:#222; line-height:1.6; }
+  .wrap { max-width:1000px; margin:0 auto; padding:24px 16px 60px; }
+  header { text-align:center; padding:32px 0 12px; }
+  header h1 { font-size:28px; font-weight:800; letter-spacing:1px; }
+  header .sub { color:#888; margin-top:6px; font-size:14px; }
+  .section { background:#fff; border-radius:14px; padding:22px; margin:18px 0; box-shadow:0 2px 12px rgba(0,0,0,.05); }
+  .section h2 { font-size:20px; border-left:4px solid #1E5AA8; padding-left:10px; margin-bottom:6px; }
+  .section-desc { color:#666; font-size:14px; margin-bottom:14px; }
+  .chart-s { font-size:14px; color:#555; background:#f0f4fa; border-radius:10px; padding:12px 14px; margin-top:12px; }
+  .tier-head { font-size:17px; font-weight:800; margin:18px 0 4px; padding:6px 12px; border-radius:8px; color:#fff; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .tier-head small { font-weight:500; font-size:12.5px; opacity:.92; }
+  .tier-sum { font-size:13px; color:#555; margin-bottom:10px; padding:0 4px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; }
+  .card { border:1px solid #eee; border-radius:12px; padding:14px; }
+  .card h3 { font-size:15px; margin-bottom:6px; }
+  .card .tagline { font-size:12px; color:#1E5AA8; background:#eef3fb; border-radius:6px; padding:2px 8px; display:inline-block; margin-bottom:6px; }
+  .card .price { font-size:22px; font-weight:800; color:#C0392B; }
+  .card .unit { color:#888; font-size:13px; margin-top:2px; }
+  .card ul { list-style:none; margin-top:8px; font-size:13px; }
+  .card li { display:flex; justify-content:space-between; gap:6px; padding:3px 0; border-bottom:1px dashed #f0f0f0; }
+  .card li b { text-align:right; font-weight:600; }
+  .card .yes { color:#2E7D32; } .card .no { color:#C0392B; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  th,td { border:1px solid #e8e8e8; padding:8px 8px; text-align:center; }
+  th { background:#1E5AA8; color:#fff; font-weight:600; }
+  tr:nth-child(even) td { background:#fafcff; }
+  td.hl { background:#fff4e6 !important; font-weight:700; }
+  td.dim { background:#f4f6f9 !important; font-weight:600; text-align:left; }
+  .matrix-wrap { overflow-x:auto; }
+  .disclaimer { font-size:12px; color:#999; margin-top:18px; padding:14px; background:#f7f7f7; border-radius:10px; }
+  .radar-box { width:100%; height:440px; }
+  .bar-box { width:100%; height:360px; }
+  .callout { font-size:14px; background:#fff8ec; border:1px solid #f0dfc0; border-radius:10px; padding:12px 14px; margin-top:14px; }
+  .callout.warn { background:#fdf0ef; border-color:#f0c8c4; }
+  .cert-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:8px; }
+  .cert-card { border:1px solid #e4e9f2; border-left:4px solid #2E7D32; border-radius:10px; padding:12px 14px; background:#fafcff; }
+  .cert-card h3 { font-size:15px; margin-bottom:4px; }
+  .cert-card p { font-size:13px; color:#555; }
+  .cert-card .lv { font-size:12px; color:#888; margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>葵爸的安全座椅大横评</h1>
+    <div class="sub">13 款热门 i-Size 座椅 · 按价格三档对决：¥1000-2000 / ¥2000-3000 / ¥3000+ · 数据来自品牌官网/电商详情页/ADAC 公开报道 · 采集 2026-08</div>
+  </header>
+
+  <!-- 开场导读 -->
+  <div class="section">
+    <h2>开场三句话</h2>
+    <p class="section-desc">没时间看完全文的，先记住这三句：</p>
+    <div class="callout">
+      ① <b>「i-Size」是入场券，不是天花板</b>——本期 13 款（含千元档）全部通过 3C + i-Size，但真正送测过 ADAC（德国汽车俱乐部独立碰撞测试）的只有 2 款进口，其余多为「品牌宣称」。<br>
+      ② <b>先定价格档，再谈性价比</b>——千元档已有「认证+配置」双在线的 i-Size 款；但 ¥1000 以下基本买不到 i-Size，这条线别踩。<br>
+      ③ <b>按「每年使用成本」算账，比看总价更清醒</b>——千元档约 138-257 元/年，2000-3000 档约 316-542 元/年，3000+ 档约 307-1075 元/年。贵不贵，除以年限再看。
+    </div>
+  </div>
+
+  <!-- 认证科普 -->
+  <div class="section">
+    <h2>先看懂三个「证」，再看座椅</h2>
+    <p class="section-desc">安全座椅圈最大的信息差不是参数，是认证。家长常把「有 i-Size」当终点，其实它只是欧洲法规的入场线。</p>
+    <div class="cert-cards">
+      <div class="cert-card">
+        <h3>3C 认证（GB 27887）</h3>
+        <p>中国强制认证，2021 年 6 月起安全座椅无 3C 不得出厂销售。只保证达到国标底线，<b>不区分好坏</b>。</p>
+        <div class="lv">底线 · 人人有</div>
+      </div>
+      <div class="cert-card">
+        <h3>i-Size（ECE R129）</h3>
+        <p>欧洲新法规：按身高分组（不再按体重）、增加侧面碰撞测试、<b>强制 15 个月前反向乘坐</b>。同样是法规线，通过≠优秀。</p>
+        <div class="lv">法规线 · 本期 13 款全过</div>
+      </div>
+      <div class="cert-card">
+        <h3>ADAC 独立测试</h3>
+        <p>德国汽车俱乐部买样抽测：碰撞比法规更严（约 70km/h），还测面料有害物、误操作率。<b>1.0 最好、4.6 以上差</b>；2025 年起再加测 PFAS。是目前唯一广泛可信的第三方成绩。</p>
+        <div class="lv">真·第三方 · 本期仅 2 款进口有公开成绩</div>
+      </div>
+    </div>
+    <div class="chart-s">📌 冷知识：i-Size 标签上的 E1/E4 是「认证颁发国」编号（E1 德国、E4 荷兰），不代表产地、也不代表等级高低——别被「E1 比E4 高级」的话术带偏。</div>
+  </div>
+
+  <!-- 段位之争 -->
+  <div class="section">
+    <h2>段位之争：0-4 / 0-7 / 0-12 怎么选？</h2>
+    <p class="section-desc">安全座椅界的「段位混用」比奶粉还狠——一台座椅想同时伺候新生儿的头颈和大童的骨架，结构上必然互相让步。参考口径（数据为公开测试与行业共识，标注为作者整理）：</p>
+    <table>
+      <tr><th>段位</th><th>覆盖</th><th>优势</th><th>代价</th><th>典型代表</th></tr>
+      <tr><td class="dim">0-4 岁（40-105cm）</td><td>反向乘坐黄金期全覆盖</td><td>新生儿包裹性、反向躺角、头颈防护做得最专；进口送测款基本集中在这个段位</td><td>4 岁后要再买一台增高座椅（约 ¥300-800）</td><td>Cybex Sirona Gi、Mica 360 Pro、双面骑士、Joie 陀螺勇士</td></tr>
+      <tr><td class="dim">0-7 岁（40-125cm）</td><td>国内主流段位</td><td>平衡之选：低龄适配尚可、用得久，国产卷得最凶的段位</td><td>大童模式下座舱偏小、头枕升高后侧防覆盖需留意</td><td>宝贝第一星护、惠尔顿智转Pro、猫头鹰妙转Pro+、好孩子安全舱1号、BeBeBus 天文家</td></tr>
+      <tr><td class="dim">0-12 岁（40-150cm）</td><td>「一台到位」</td><td>省心省钱、换车换娃无缝衔接，元/年最低</td><td>结构妥协最大——ADAC 2025 年一款 0-12 全龄款碰撞仅 3.6 分被点名不推荐；12 年材料老化也是变量</td><td>欧颂星际号、虎贝尔 E360 Pro、两只兔子求知2 Pro；惠尔顿茧之旅 Pro 为 3-12 岁大童款</td></tr>
+    </table>
+    <div class="chart-s">作者观点（主观）：新生儿阶段安全冗余最重要，倾向「0-4 专龄款 + 4 岁后换增高垫」；图省事选 0-7；0-12 适合二孩接力，但别指望它每个阶段都做到最优。</div>
+  </div>
+
+  <!-- 参评清单：按三档 -->
+  <div class="section">
+    <h2>参评清单（13 款 · 按价格档分组）</h2>
+    <p class="section-desc">选品原则：三档各选线上销量与讨论度最高的代表型号；价格为参考价（近期电商常卖到手价，个别千元档为促销价），会波动。千元档三款部分细项参数未完整采集，已如实标注「未采集」，不做臆测。</p>
+    <div id="tierList"></div>
+    <div class="callout warn">
+      <b>⚠️ ¥1000 以下红线：</b>这个价位基本买不到 i-Size——多为 3C + 老 ECE R44 双标或单 3C 款，侧防弱、认证旧；宣传「千元 360°旋转」的多为结构妥协款。预算实在有限：宁可买大牌基础正向安装款（先问客服要认证证书照片，确认是 R129 还是老 R44），也别买杂牌全功能款。好孩子 CS668PI（¥1299）等大牌低价老款同理——先核认证再下单。
+    </div>
+  </div>
+
+  <!-- 雷达图 -->
+  <div class="section">
+    <h2>六维能力雷达（作者主观模型）</h2>
+    <p class="section-desc">维度：碰撞安全（认证+第三方成绩）/ 安装防错 / 乘坐舒适 / 便捷交互 / 成长覆盖 / 价格实惠。分值为作者依据公开数据的主观加权，仅供横向参考，非第三方检测。默认展示三档代表机型各 2 款，点击图例可叠加对比。</p>
+    <div id="radar" class="radar-box"></div>
+    <div class="chart-s">同档内比六维才有意义；跨档比「价格实惠」没有意义——千元档便宜是应该的，3000+ 档拼的是碰撞冗余和体验。</div>
+  </div>
+
+  <!-- 柱状图1：参考价 -->
+  <div class="section">
+    <h2>参考价对比（按价格升序 · 三档分色）</h2>
+    <div id="barPrice" class="bar-box"></div>
+    <div class="chart-s">绿色=¥1000-2000 档，橙色=¥2000-3000 档，蓝色=¥3000+ 档。注意：Maxi-Cosi Mica 360 Pro 吊牌价 4580-5389 元，大促曾低至 3900 元上下；欧颂星际号智能2代常卖价 1800+，1650 为蹲促销价——安全座椅是标价水分最重的母婴品类之一，<b>没有「非买不可」的时刻，蹲大促再出手</b>。</div>
+  </div>
+
+  <!-- 柱状图2：每年成本 -->
+  <div class="section">
+    <h2>每年使用成本（参考价 ÷ 覆盖年限）</h2>
+    <div id="barYear" class="bar-box"></div>
+    <div class="chart-s">把「用到几岁」摊进去，格局立刻变了：最便宜的欧颂星际号（约 138 元/年，0-12 岁）≈ 最贵 Mica 360 Pro（约 1075 元/年，0-4 岁）的 1/8；但 <b>元/年低≠划算</b>——0-12 岁款摊薄成本的前提是结构妥协（见段位之争），0-4 岁款贵的是「每一年都坐在更专龄的结构里」。这笔账没有标准答案，只有你家答案。</div>
+  </div>
+
+  <!-- 详细对比表 -->
+  <div class="section">
+    <h2>硬参数详细对比</h2>
+    <p class="section-desc">参数依据品牌官网 / 电商详情页公开信息整理（采集 2026-08）；「品牌宣称」类表述已标注。ADAC 一栏仅填写可查证的公开送测成绩，查不到就写「无公开成绩」——<b>没有成绩≠不安全，但有成绩=可验证</b>。千元档三款细项「未采集」处不猜不编。</p>
+    <div class="matrix-wrap"><table id="matrix"></table></div>
+  </div>
+
+  <!-- 价格对比表 -->
+  <div class="section">
+    <h2>比价表（按价格升序 · 参考价 · 元/年 · 配置计分）</h2>
+    <p class="section-desc">价格为参考价（2026-08 采集）：取近期电商常卖到手价，吊牌价常高于此，「到手区间」为大促-常卖价波动带。配置计分=8 项硬配置逐项计数（钢骨架/一体注塑壳体、EPP 或 EPS 缓冲、强化或动态侧防、支撑腿、360°旋转、安装监测指示、主动通风、大躺角），依据公开参数计数，作者整理；千元档三款公开参数不完整，计分暂标「未采集」，不代表配置低。</p>
+    <div class="matrix-wrap"><table id="price"></table></div>
+  </div>
+
+  <!-- 选购建议 -->
+  <div class="section">
+    <h2>选购建议：先定档，再对号入座</h2>
+    <p class="section-desc">没有「最好的座椅」，只有「最对路的那台」。按价格档 + 家庭情况推荐，不搞单一冠军；价格为参考价（2026-08 采集）。</p>
+    <table>
+      <tr><th style="width:8%">档位</th><th style="width:24%">你的情况</th><th style="width:22%">优先看</th><th>为什么</th><th style="width:20%">注意</th></tr>
+      <tr><td class="dim" rowspan="3">¥1000-2000</td><td class="dim">预算 1500 内 + 认证优先</td><td><b>宝贝第一 星护</b>（¥1399）</td><td>千元档「认证+配置」最齐锚点款：3C + i-Size（R129），EPP 全包裹侧防 + 隐藏钢骨架 + 一体注塑，2025 年 618 曾冲进天猫品类 TOP3。</td><td>细项参数以详情页为准；无公开第三方碰撞成绩。</td></tr>
+      <tr><td class="dim">预算 2000 内 + 要防呆监测</td><td><b>惠尔顿 智转 Pro</b>（≈¥1799）</td><td>257 元/年；四大智能传感器（ISOFIX/支撑腿/旋转/卡扣）红绿灯监测，专治「到底装没装对」焦虑，历史低价曾到 ¥1179。</td><td>碰撞安全无公开第三方成绩；是「达标+实用」不是「顶配」。</td></tr>
+      <tr><td class="dim">已有 0-4 座椅，4 岁后换装 / 二孩接力</td><td><b>惠尔顿 茧之旅 Pro</b>（≈¥1439-1599）</td><td>i-Size 3-12 岁大童成长款，约 178 元/年，补一台很划算。</td><td>⚠️ 不是新生儿椅，9 个月以下宝宝不能直接用。</td></tr>
+      <tr><td class="dim" rowspan="4">¥2000-3000</td><td class="dim">明确要 0-12 一台到位 + 预算紧</td><td><b>欧颂 星际号智能2代</b>（促销约 ¥1650）</td><td>i-Size 0-12 岁，智能版带通风加热语音，元/年全榜最低（约 138）。</td><td>踩全龄段结构妥协（见段位之争）；1650 是蹲促销价，常卖 1800+。</td></tr>
+      <tr><td class="dim">2000 档进口入门</td><td><b>Joie 陀螺勇士 Pro</b>（≈¥2299）</td><td>英国品牌，ECE R129 i-Size，官网标注「ADAC 同级 test winner」（品牌宣称）；六段背靠调节，配置实用不花哨。</td><td>无主动通风；ADAC 宣称口径为「同级车款」，非该型号单独送测公示。</td></tr>
+      <tr><td class="dim">2000-3000 国产主流均衡款</td><td><b>猫头鹰 妙转 Pro+</b>（≈¥2480）</td><td>354 元/年；宝得适中国总代（麦克英孚）旗下品牌，供应链同源，配置表干净无硬伤。</td><td>智能监测为指示灯级别，无通风温控版另算钱。</td></tr>
+      <tr><td class="dim">想要进口大牌，预算控制在 3000 内 / 国产龙头情结</td><td><b>宝得适 双面骑士</b>（≈¥2999）或 <b>好孩子 安全舱1号 S Pro</b>（≈¥2999）</td><td>双面骑士：老牌大厂 + SICT 侧防，进口认证款入场价；好孩子：国产龙头品控 + 电子通风，428 元/年。</td><td>双面骑士无风扇通风；两者均无公开 ADAC 成绩。</td></tr>
+      <tr><td class="dim" rowspan="3">¥3000+</td><td class="dim">预算充足 + 新生儿起步 + 只认第三方碰撞成绩</td><td><b>Cybex Sirona Gi</b>（≈¥3999）或 <b>迈可适 Mica 360 Pro</b>（≈¥4299）</td><td>本期唯二有公开 ADAC 送测成绩：Sirona Gi 总评 2.2（2024·Good）；Mica 360 Pro 总评 Good（2024，品牌宣传「0-4 岁组冠军」）。安全冗余可验证。</td><td>送测为欧版，认准国行渠道；两者 4 年后都要再配增高垫。</td></tr>
+      <tr><td class="dim">国产智能旗舰 / 颜值党</td><td><b>BeBeBus 天文家 Pro</b>（≈¥3880）</td><td>设计感最强，Cobra 记忆棉 + 动力侧防盾 + 三档吸风。</td><td>吊牌价含较大溢价空间，蹲活动；无公开第三方碰撞成绩。</td></tr>
+      <tr><td class="dim">二孩家庭 / 一台用到 12 岁</td><td><b>虎贝尔 E360 Pro</b>（≈¥3688）或 <b>两只兔子 求知2 Pro</b>（≈¥3780）</td><td>307/315 元/年，接力使用摊薄成本；配置拉满（S700MC 钢骨架、双层缓冲、智能侧防、通风/温控）。</td><td>⚠️ 全龄段必有结构妥协；新生儿阶段包裹性不如 0-4 专龄款，二孩接力场景性价比才最大化。</td></tr>
+      <tr><td class="dim">跨档</td><td class="dim">只看安全榜单 / 唯 ADAC 论</td><td>本期仅 <b>Cybex Sirona Gi</b>、<b>迈可适 Mica 360 Pro</b> 有可查证公开成绩</td><td>国产厂商极少送测 ADAC（成本高 + 中国版供应链差异），「品牌宣称 ADAC 级」多数查无实据。</td><td>2025 年起 ADAC 测试加严（含 PFAS 检测），新旧年份成绩不可直接比较。</td></tr>
+    </table>
+    <div class="callout warn">
+      <b>📌 下单前最后 3 句大实话：</b>① 认证看「3C+i-Size」是底线操作，第三方成绩只有 ADAC 可信，注意区分「送测成绩」和「品牌宣称」；② 全龄款（0-12 岁）买的是省心不是极致安全，新生儿阶段有条件优先专龄款或反向躺角大的型号；③ <b>再贵的座椅，装不对=裸奔</b>——安装指示灯、支撑腿到位确认、反向卡扣这类「防呆设计」是每天都在发挥作用的真功能，别只盯着碰撞参数。
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    免责声明：本测评基于各产品品牌官网、电商详情页公开参数、公开行业研报及 ADAC / Stiftung Warentest 公开报道整理，价格为参考价且随促销波动，仅供参考，不构成购买建议或官方背书。「品牌宣称」类表述（如 ADAC 冠军、同级 test winner、冲击力降低 XX%）均已标注口径；千元档部分型号细项参数未完整采集，以官方详情页为准。购买前请以品牌官方最新信息与实际商品页为准，并务必确认自家车型接口（ISOFIX）与后排空间。
+  </div>
+</div>
+
+<script>
+// ===== 配置区 =====
+const TIERS = {
+  1: { label:"¥1000-2000 · 性价比入门档", color:"#2E7D32", sum:"国产入门区间：i-Size 已下放到千元，但配置差异大、第三方成绩全空白——这档认死理：3C 是底线，i-Size 是及格线，EPP 侧防+钢骨架算加分。" },
+  2: { label:"¥2000-3000 · 主力黄金档", color:"#E67E22", sum:"行业公认走量区间（电商销量占比最高的价位带）：进口入门款与国产主力款正面撞车，360°旋转 + 智能监测开始标配。" },
+  3: { label:"¥3000 及以上 · 高端旗舰档", color:"#1E5AA8", sum:"进口 ADAC 送测款与国产智能旗舰的主场：碰撞冗余可验证、通风温控拉满；溢价买的是「可验证的安全」和体验，需蹲大促。" },
+};
+const products = [
+  { name:"宝贝第一 星护", short:"宝贝第一\n星护", brand:"宝贝第一（中国·麦克英孚）", origin:"local", tier:1, tag:"千元档·认证锚点", price:1399, priceRange:"1399（新品价）", years:7,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":3,"安装防错":3,"乘坐舒适":3,"便捷交互":3,"成长覆盖":4,"价格实惠":5 }, cfg:"未采集",
+    rows:{ "适用范围":"0-7岁（以详情页为准）", "认证":"3C + i-Size（R129）", "骨架/壳体":"隐藏钢骨架+一体注塑", "缓冲":"EPP 全包裹", "侧防":"EPP 全包裹侧防", "旋转":"未采集", "躺角":"未采集", "通风":"未采集", "智能监测":"未采集" } },
+  { name:"惠尔顿 茧之旅 Pro", short:"惠尔顿\n茧之旅Pro", brand:"惠尔顿（中国）", origin:"local", tier:1, tag:"千元档·3-12岁成长款", price:1599, priceRange:"1439–1599", years:9,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":3,"安装防错":3,"乘坐舒适":3,"便捷交互":3,"成长覆盖":5,"价格实惠":5 }, cfg:"未采集",
+    rows:{ "适用范围":"3-12 岁大童款", "认证":"3C + i-Size", "骨架/壳体":"未采集", "缓冲":"未采集", "侧防":"未采集", "旋转":"未采集", "躺角":"未采集", "通风":"未采集", "智能监测":"未采集" } },
+  { name:"欧颂 星际号智能2代", short:"欧颂\n星际号2代", brand:"欧颂 Osann（德国品牌）", origin:"local", tier:1, tag:"千元档·0-12全龄", price:1650, priceRange:"1650–1887", years:12,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":3,"安装防错":3,"乘坐舒适":4,"便捷交互":4,"成长覆盖":5,"价格实惠":4 }, cfg:"未采集",
+    rows:{ "适用范围":"0-12 岁（40-150cm）", "认证":"3C + i-Size", "骨架/壳体":"未采集", "缓冲":"未采集", "侧防":"未采集", "旋转":"未采集（智能版带通风加热）", "躺角":"未采集", "通风":"智能版有", "智能监测":"智能版语音交互" } },
+  { name:"惠尔顿 智转 Pro", short:"惠尔顿\n智转Pro", brand:"惠尔顿（中国）", origin:"local", tier:1, tag:"国产·性价比+防呆", price:1799, priceRange:"1179–2168", years:7,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":3,"安装防错":5,"乘坐舒适":4,"便捷交互":4,"成长覆盖":4,"价格实惠":5 }, cfg:8,
+    rows:{ "适用范围":"40-125cm（0-7岁）", "认证":"3C + i-Size（E4）", "骨架/壳体":"碳素钢骨架+注塑", "缓冲":"EPP+EPS", "侧防":"双层头枕侧防", "旋转":"360°", "躺角":"多档调节", "通风":"分龄双通风（智能版）", "智能监测":"四大传感器监测" } },
+  { name:"Joie 陀螺勇士 Pro", short:"Joie\n陀螺勇士Pro", brand:"Joie（英国品牌）", origin:"import", tier:2, tag:"进口·性价比", price:2299, priceRange:"1999–2599", years:4,
+    adac:"官网称 ADAC 同级 winner（宣称）",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":3,"便捷交互":3,"成长覆盖":2,"价格实惠":4 }, cfg:6,
+    rows:{ "适用范围":"40-105cm / 18kg（0-4岁）", "认证":"3C + ECE R129 i-Size", "骨架/壳体":"高强度壳体", "缓冲":"EPP+记忆棉", "侧防":"Guard Surround 侧防", "旋转":"360°（双侧按钮）", "躺角":"六段背靠调节", "通风":"透气网布（无风扇）", "智能监测":"ISOFIX 指示灯" } },
+  { name:"猫头鹰 妙转 Pro+", short:"猫头鹰\n妙转Pro+", brand:"猫头鹰 Savile（中国·麦克英孚）", origin:"local", tier:2, tag:"国产·同供应链", price:2480, priceRange:"2180–2680", years:7,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":4,"便捷交互":4,"成长覆盖":4,"价格实惠":4 }, cfg:8,
+    rows:{ "适用范围":"40-125cm（0-7岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"EPP", "侧防":"强化侧防", "旋转":"360°", "躺角":"多档调节", "通风":"通风版可选", "智能监测":"安装指示灯" } },
+  { name:"宝得适 双面骑士", short:"宝得适\n双面骑士", brand:"Britax（英国品牌）", origin:"import", tier:2, tag:"进口·老牌经典", price:2999, priceRange:"2999–3680", years:4,
+    adac:"无公开成绩（国行版）",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":3,"便捷交互":4,"成长覆盖":2,"价格实惠":3 }, cfg:7,
+    rows:{ "适用范围":"40-105cm（0-4岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"EPS", "侧防":"SICT 侧撞保护", "旋转":"360°", "躺角":"正反向多档", "通风":"无（面料透气）", "智能监测":"安装指示" } },
+  { name:"好孩子 安全舱1号S Pro", short:"好孩子\n安全舱1号", brand:"好孩子（中国）", origin:"local", tier:2, tag:"国产·龙头大牌", price:2999, priceRange:"2117–2999", years:7,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":4,"便捷交互":4,"成长覆盖":4,"价格实惠":3 }, cfg:8,
+    rows:{ "适用范围":"40-125cm（0-7岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"EPP+吸能材料", "侧防":"强化侧防", "旋转":"360°", "躺角":"多档调节", "通风":"电子通风款", "智能监测":"安装指示" } },
+  { name:"虎贝尔 E360 Pro", short:"虎贝尔\nE360Pro", brand:"虎贝尔（中国）", origin:"local", tier:3, tag:"国产·全龄段", price:3688, priceRange:"3488–3888", years:12,
+    adac:"宣传提及 ADAC 评级（未查到公开记录）",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":5,"便捷交互":4,"成长覆盖":5,"价格实惠":4 }, cfg:8,
+    rows:{ "适用范围":"40-150cm（0-12岁）·反向至4岁", "认证":"3C + i-Size（E1）+ IGR", "骨架/壳体":"S700MC 汽车钢（双L型）", "缓冲":"双层吸能", "侧防":"15cm 动态侧防", "旋转":"360°", "躺角":"170°", "通风":"四驱旋吸通风", "智能监测":"安装指示" } },
+  { name:"两只兔子 求知2 Pro", short:"两只兔子\n求知2Pro", brand:"两只兔子（中国）", origin:"local", tier:3, tag:"国产·智能温控", price:3780, priceRange:"3430–3980", years:12,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":4,"安装防错":4,"乘坐舒适":5,"便捷交互":5,"成长覆盖":5,"价格实惠":3 }, cfg:8,
+    rows:{ "适用范围":"40-150cm（0-12岁）", "认证":"3C + i-Size（E1）", "骨架/壳体":"S700MC 高强度钢", "缓冲":"EPP+记忆棉", "侧防":"智能动态侧防", "旋转":"360°", "躺角":"约165°", "通风":"双通风+智能温控", "智能监测":"温控+语音+监测" } },
+  { name:"BeBeBus 天文家 Pro", short:"BeBeBus\n天文家", brand:"BeBeBus（中国）", origin:"local", tier:3, tag:"国产·设计旗舰", price:3880, priceRange:"3380–3880", years:7,
+    adac:"无公开成绩",
+    metrics:{ "碰撞安全":4,"安装防错":3,"乘坐舒适":4,"便捷交互":3,"成长覆盖":4,"价格实惠":3 }, cfg:8,
+    rows:{ "适用范围":"40-125cm（0-7岁）", "认证":"3C + i-Size（E4 全岁段）", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"Cobra 记忆棉+Cellular", "侧防":"动力侧防盾", "旋转":"360°", "躺角":"多档调节", "通风":"三档吸风排热", "智能监测":"安装监测（智能款）" } },
+  { name:"Cybex Sirona Gi", short:"赛佰斯\nSirona Gi", brand:"Cybex（德国品牌）", origin:"import", tier:3, tag:"进口·ADAC送测款", price:3999, priceRange:"3549–4199", years:4,
+    adac:"2.2 · Good（2024 送测）",
+    metrics:{ "碰撞安全":5,"安装防错":4,"乘坐舒适":4,"便捷交互":4,"成长覆盖":2,"价格实惠":2 }, cfg:7,
+    rows:{ "适用范围":"40-105cm（0-4岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"EPP/EPS", "侧防":"集成式侧撞防护", "旋转":"360°", "躺角":"多档调节", "通风":"透气面料（无风扇）", "智能监测":"安装指示" } },
+  { name:"迈可适 Mica 360 Pro", short:"迈可适\nMica 360", brand:"Maxi-Cosi（荷兰品牌）", origin:"import", tier:3, tag:"进口·ADAC送测款", price:4299, priceRange:"3938–4580", years:4,
+    adac:"Good（2024 送测·宣称冠军）",
+    metrics:{ "碰撞安全":5,"安装防错":5,"乘坐舒适":5,"便捷交互":5,"成长覆盖":2,"价格实惠":2 }, cfg:8,
+    rows:{ "适用范围":"40-105cm（0-4岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"G-CELL 高分子", "侧防":"G-CELL 侧防模块", "旋转":"360° + 侧滑出舱", "躺角":"165°", "通风":"ClimaFlow 透气系统", "智能监测":"安装指示灯" } },
+];
+
+// ===== 按档分组渲染卡片 =====
+document.getElementById('tierList').innerHTML = [1,2,3].map(t=>{
+  const list = products.filter(p=>p.tier===t);
+  return `<div class="tier-head" style="background:${TIERS[t].color}">${TIERS[t].label}<small>${list.length} 款</small></div>
+    <div class="tier-sum">${TIERS[t].sum}</div>
+    <div class="cards">${list.map(p=>`
+      <div class="card">
+        <h3>${p.name}</h3>
+        <div class="tagline">${p.tag}</div>
+        <div class="price">¥${p.price}</div>
+        <div class="unit">约 ${Math.round(p.price/p.years)} 元/年 · 覆盖 ${p.years} 年</div>
+        <ul>${Object.entries(p.rows).slice(0,4).map(([k,v])=>`<li><span>${k}</span><b>${v}</b></li>`).join('')}
+        <li><span>ADAC</span><b>${p.adac}</b></li></ul>
+      </div>`).join('')}</div>`;
+}).join('');
+
+// ===== 雷达图 =====
+const dims = ["碰撞安全","安装防错","乘坐舒适","便捷交互","成长覆盖","价格实惠"];
+const radarDefault = ["宝贝第一 星护","惠尔顿 智转 Pro","Joie 陀螺勇士 Pro","好孩子 安全舱1号S Pro","虎贝尔 E360 Pro","Cybex Sirona Gi"];
+const radarSel = {}; products.forEach(p=>{ radarSel[p.name] = radarDefault.includes(p.name); });
+const radar = echarts.init(document.getElementById('radar'));
+radar.setOption({
+  tooltip:{},
+  legend:{ data: products.map(p=>p.name), bottom:0, type:'scroll', selected:radarSel },
+  radar:{ indicator: dims.map(d=>({name:d,max:5})), radius:'60%' },
+  series:[{ type:'radar', data: products.map(p=>({
+    name:p.name, value:dims.map(d=>p.metrics[d]),
+    areaStyle:{opacity:.12}, lineStyle:{width:2}
+  })) }]
+});
+
+// ===== 柱状图1：参考价（按价格升序，三档分色） =====
+const barPrice = echarts.init(document.getElementById('barPrice'));
+barPrice.setOption({
+  tooltip:{ trigger:'axis', formatter: ps => { const p = products[ps[0].dataIndex];
+    return ps[0].name.replace(/\n/g,'') + '：¥' + ps[0].value + '<br>' + TIERS[p.tier].label + ' · ' + (p.origin==='import'?'进口':'国产'); } },
+  grid:{left:60,right:20,top:30,bottom:60},
+  xAxis:{ type:'category', data: products.map(p=>p.short), axisLabel:{ interval:0, fontSize:10 } },
+  yAxis:{ type:'value', name:'参考价（元）' },
+  series:[{ type:'bar', barWidth:'55%',
+    data: products.map(p=>({ value:p.price, itemStyle:{ color:TIERS[p.tier].color } })),
+    label:{ show:true, position:'top', formatter:'¥{c}', fontSize:10 },
+    markLine:{ silent:true, symbol:'none', lineStyle:{ type:'dashed', color:'#999' }, label:{ formatter:'¥{c}', position:'insideEndTop' },
+      data:[ {yAxis:2000}, {yAxis:3000} ] }
+  }]
+});
+
+// ===== 柱状图2：每年成本 =====
+const barYear = echarts.init(document.getElementById('barYear'));
+barYear.setOption({
+  tooltip:{ trigger:'axis', formatter: ps => { const p = products[ps[0].dataIndex];
+    return ps[0].name.replace(/\n/g,'') + '：约 ' + ps[0].value + ' 元/年（参考价¥' + p.price + ' ÷ ' + p.years + '年）<br>' + TIERS[p.tier].label; } },
+  grid:{left:60,right:20,top:30,bottom:60},
+  xAxis:{ type:'category', data: products.map(p=>p.short), axisLabel:{ interval:0, fontSize:10 } },
+  yAxis:{ type:'value', name:'元/年' },
+  series:[{ type:'bar', barWidth:'55%',
+    data: products.map(p=>({ value:Math.round(p.price/p.years), itemStyle:{ color:TIERS[p.tier].color } })),
+    label:{ show:true, position:'top', formatter:'{c}', fontSize:10 }
+  }]
+});
+
+// ===== 详细对比表 =====
+const keys = ["适用范围","认证","骨架/壳体","缓冲","侧防","旋转","躺角","通风","智能监测"];
+document.getElementById('matrix').innerHTML =
+  `<tr><th>维度</th>${products.map(p=>`<th>${p.short.replace(/\n/g,'<br>')}</th>`).join('')}</tr>` +
+  `<tr><td class="dim">价格档</td>${products.map(p=>`<td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td>`).join('')}</tr>` +
+  `<tr><td class="dim">品牌</td>${products.map(p=>`<td>${p.brand}<br>（${p.origin==='import'?'进口':'国产'}）</td>`).join('')}</tr>` +
+  `<tr><td class="dim">参考价</td>${products.map(p=>`<td class="hl">¥${p.price}</td>`).join('')}</tr>` +
+  `<tr><td class="dim">ADAC 公开成绩</td>${products.map(p=>`<td>${p.adac}</td>`).join('')}</tr>` +
+  keys.map(k=>`<tr><td class="dim">${k}</td>${products.map(p=>`<td>${p.rows[k]||'-'}</td>`).join('')}</tr>`).join('');
+
+// ===== 比价表 =====
+document.getElementById('price').innerHTML =
+  `<tr><th>价格档</th><th>产品</th><th>参考价</th><th>到手区间</th><th>覆盖年限</th><th>元/年</th><th>配置计分(8项)</th></tr>` +
+  products.map(p=>`<tr><td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td><td>${p.name}</td><td>¥${p.price}</td><td>¥${p.priceRange}</td><td>${p.years} 年</td><td class="hl">${Math.round(p.price/p.years)}</td><td>${p.cfg}</td></tr>`).join('');
+
+window.addEventListener('resize',()=>{ radar.resize(); barPrice.resize(); barYear.resize(); });
+</script>
+</body>
+</html>
