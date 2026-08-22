@@ -97,6 +97,19 @@
   tr:nth-child(even) td { background:#fafcff; }
   td.hl { background:#fff4e6 !important; font-weight:700; color:#B95E0E; }
   td.dim { background:#f4f6f9 !important; font-weight:600; text-align:left; }
+  td.risk { background:#fff8e6 !important; color:#B95E0E; font-weight:600; }
+
+  /* ===== 筛选器 ===== */
+  .filters { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:4px 0 14px; }
+  .f-label { font-size:12.5px; color:#66707d; font-weight:700; }
+  .fbtn { font-size:12.5px; border:1px solid #d8e0ea; background:#fff; color:#45566b;
+    border-radius:99px; padding:4px 13px; cursor:pointer; transition:.15s; }
+  .fbtn:hover { border-color:var(--navy2); color:var(--navy2); }
+  .fbtn.on { background:linear-gradient(120deg,var(--navy),var(--navy2)); color:#fff; border-color:transparent; font-weight:600; }
+  .avoid-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:14px; margin-top:10px; }
+  .avoid-card { border:1px solid #e4e9f2; border-radius:12px; padding:14px; background:linear-gradient(160deg,#fffdf8,#faf6ec); }
+  .avoid-card h3 { font-size:14.5px; margin-bottom:6px; }
+  .avoid-card p { font-size:12.8px; color:#555; }
   .matrix-wrap { overflow-x:auto; border-radius:12px; }
   .matrix-wrap::-webkit-scrollbar{ height:8px; } .matrix-wrap::-webkit-scrollbar-thumb{ background:#c7d3e2; border-radius:8px; }
 
@@ -158,10 +171,16 @@
   <a href="#s7">每年成本</a>
   <a href="#s8">硬参数矩阵</a>
   <a href="#s9">比价表</a>
-  <a href="#s10" class="hot">选购建议</a>
+  <a href="#s10">装车避坑</a>
+  <a href="#s11" class="hot">选购建议</a>
 </div></nav>
 
 <div class="wrap">
+
+  <!-- 顶部醒目免责（P0-1） -->
+  <div class="callout warn" style="margin-top:22px">
+    <b>⚠️ 先说清楚：本页是什么、不是什么。</b>本横评所有参数采集自品牌官网与电商详情页，<b>无实物拆机、无碰撞实验</b>，商家存在参数虚标的可能性。表格仅供<b>初筛</b>——最终下单务必以<b>座椅本体刻印的 i-Size / E-mark 标签与 3C 证书原件</b>为准，本页不作为购买唯一依据。详细使用边界见下方「如何正确使用本页」。
+  </div>
 
   <!-- 开场导读 -->
   <div class="section" id="s1">
@@ -172,7 +191,7 @@
       ② <b>先定价格档，再谈性价比</b>——千元档已有「认证+配置」双在线的 i-Size 款；但 ¥1000 以下基本买不到 i-Size，这条线别踩。<br>
       ③ <b>按「每年使用成本」算账，比看总价更清醒</b>——千元档约 138-257 元/年，2000-3000 档约 316-542 元/年，3000+ 档约 307-1075 元/年。贵不贵，除以年限再看。
     </div>
-    <div class="chart-s">📖 <b>如何正确使用本页（先读这个）：</b>本页是<b>公开资料整理</b>，不是第三方检测报告——作者没有拆机、没有自建碰撞测试，参数来自品牌官网与电商详情页，若页面虚标（如宣称钢骨架实为 EPS 缓冲）本页无法核验。因此：① 参数表只做<b>初筛</b>，下单前请核对<b>座椅实物上刻印的 i-Size / E-mark 标签</b>；② 躺角、通风、座舱宽度等均为<b>标称值</b>——装车后反向躺角普遍缩水，条件允许务必线下试坐；③ 「配置计分」统计的是宣传配置项数量，<b>≠ 真实安全等级</b>（同样叫钢骨架，厚度与结构差异巨大）；④ 「未采集」= 公开渠道查不到，<b>≠ 配置差</b>，不作为扣分依据；⑤ 选购建议含作者主观倾向，不是标准答案。</div>
+    <div class="chart-s">📖 <b>如何正确使用本页（先读这个）：</b>本页是<b>公开资料整理</b>，不是第三方检测报告——作者没有拆机、没有自建碰撞测试，参数来自品牌官网与电商详情页，若页面虚标（如宣称钢骨架实为 EPS 缓冲）本页无法核验。因此：① 参数表只做<b>初筛</b>，下单前请核对<b>座椅实物上刻印的 i-Size / E-mark 标签</b>；② 躺角、通风、座舱宽度等均为<b>标称值</b>——装车后反向躺角普遍缩水，条件允许务必线下试坐；③ 「宣传功能计数」只统计商家宣传的功能项数量，<b>≠ 真实安全等级</b>（同样叫钢骨架，厚度与结构差异巨大），不能用来评判安全高低；④ 「未采集」= 公开渠道查不到，<b>≠ 配置差</b>，不作为扣分依据；⑤ 选购建议含作者主观倾向，不是标准答案。</div>
   </div>
 
   <!-- 认证科普 -->
@@ -196,7 +215,10 @@
         <div class="lv">真·第三方 · 本期仅 2 款进口有公开成绩</div>
       </div>
     </div>
-    <div class="chart-s">📌 冷知识：i-Size 标签上的 E1/E4 是「认证颁发国」编号（E1 德国、E4 荷兰），不代表产地、也不代表等级高低——别被「E1 比E4 高级」的话术带偏。</div>
+    <div class="callout">
+      🔍 <b>ADAC 成绩自查三步法（30 秒识破话术）：</b>① 打开 ADAC 官网测试库（adac.de → Tests → Kindersitze 儿童座椅），输入品牌 + 型号检索；② 只认「<b>该型号本身送测</b>」的成绩单（有测试年份 + 总评分 + 各分项）；③ 三种话术分级——<b>「Sirona Gi 2024 送测 2.2（Good）」</b>＝可查证成绩；<b>「ADAC 同级 winner / test winner」</b>＝竞品或同组别成绩，<b>不是本型号</b>；<b>「达到 ADAC 标准 / ADAC 级用料」</b>＝品牌口头宣称，一律不算数。本期 13 款中只有 Cybex Sirona Gi、迈可适 Mica 360 Pro 属第一类（且均为欧版样品送测，国行无独立公开报告）。
+    </div>
+    <div class="chart-s">📌 冷知识：i-Size 标签上的 E1/E4 是「认证颁发国」编号（E1 德国、E4 荷兰），不代表产地、也不代表等级高低——别被「E1 比E4 高级」的话术带偏。补充一句公道话：E1/E4 发证机构会开展市场飞行抽检，监督执行相对严格、业内口碑较好，但这是「监管执行」层面的差异，不是「标准高低」的差异。</div>
   </div>
 
   <!-- 段位之争 -->
@@ -215,7 +237,19 @@
   <!-- 参评清单：按三档 -->
   <div class="section" id="s4">
     <h2><span class="no">04</span>参评清单（13 款 · 按价格档分组）</h2>
-    <p class="section-desc">选品原则：三档各选线上销量与讨论度最高的代表型号；价格为参考价（近期电商常卖到手价，个别千元档为促销价），会波动。千元档三款部分细项参数未完整采集，已如实标注「未采集」，不做臆测。</p>
+    <p class="section-desc">选品原则：三档各选线上销量与讨论度最高的代表型号；价格为参考价（近期电商常卖到手价，个别千元档为促销价），会波动。千元档三款部分细项参数未完整采集，已如实标注「未采集」，不做臆测。下面可用按钮按<b>使用段位</b>和<b>价格档</b>快速筛选。</p>
+    <div class="filters">
+      <span class="f-label">段位：</span>
+      <button class="fbtn on" data-f="stage" data-v="all">全部</button>
+      <button class="fbtn" data-f="stage" data-v="0-4">0-4 专龄</button>
+      <button class="fbtn" data-f="stage" data-v="0-7">0-7 岁</button>
+      <button class="fbtn" data-f="stage" data-v="0-12">0-12 全龄（含3-12）</button>
+      <span class="f-label">档位：</span>
+      <button class="fbtn on" data-f="tier" data-v="all">全部</button>
+      <button class="fbtn" data-f="tier" data-v="1">¥1000-2000</button>
+      <button class="fbtn" data-f="tier" data-v="2">¥2000-3000</button>
+      <button class="fbtn" data-f="tier" data-v="3">¥3000+</button>
+    </div>
     <div id="tierList"></div>
     <div class="callout warn">
       <b>⚠️ ¥1000 以下红线：</b>这个价位基本买不到 i-Size——多为 3C + 老 ECE R44 双标或单 3C 款，侧防弱、认证旧；宣传「千元 360°旋转」的多为结构妥协款。预算实在有限：宁可买大牌基础正向安装款（先问客服要认证证书照片，确认是 R129 还是老 R44），也别买杂牌全功能款。好孩子 CS668PI（¥1299）等大牌低价老款同理——先核认证再下单。
@@ -241,7 +275,7 @@
   <div class="section" id="s7">
     <h2><span class="no">07</span>每年使用成本（参考价 ÷ 覆盖年限）</h2>
     <div id="barYear" class="bar-box"></div>
-    <div class="chart-s">把「用到几岁」摊进去，格局立刻变了：最便宜的欧颂星际号（约 138 元/年，0-12 岁）≈ 最贵 Mica 360 Pro（约 1075 元/年，0-4 岁）的 1/8；但 <b>元/年低≠划算</b>——0-12 岁款摊薄成本的前提是结构妥协（见段位之争），0-4 岁款贵的是「每一年都坐在更专龄的结构里」。这笔账没有标准答案，只有你家答案。</div>
+    <div class="chart-s">把「用到几岁」摊进去，格局立刻变了：最便宜的欧颂星际号（约 138 元/年，0-12 岁）≈ 最贵 Mica 360 Pro（约 1075 元/年，0-4 岁）的 1/8；但 <b>元/年低≠划算</b>——0-12 岁款摊薄成本的前提是结构妥协（见段位之争），0-4 岁款贵的是「每一年都坐在更专龄的结构里」。这笔账没有标准答案，只有你家答案。<br>⚠️ <b>口径提醒：元/年为理论摊薄值</b>——参考价 ÷ 标称最大覆盖年限。受孩子身高影响（横长快于纵长、头枕升高后提前顶头），座椅现实中常会<b>提前淘汰</b>，0-12 岁款极少真正用满 12 年，实际年均成本大概率高于表列值。</div>
   </div>
 
   <!-- 详细对比表 -->
@@ -249,19 +283,52 @@
     <h2><span class="no">08</span>硬参数详细对比</h2>
     <p class="section-desc">参数依据品牌官网 / 电商详情页公开信息整理（采集 2026-08）；「品牌宣称」类表述已标注。ADAC 一栏仅填写可查证的公开送测成绩，查不到就写「无公开成绩」——<b>没有成绩≠不安全，但有成绩=可验证</b>。千元档三款细项「未采集」处不猜不编。</p>
     <div class="matrix-wrap"><table id="matrix"></table></div>
+    <div class="chart-s">📌 <b>表格阅读须知：</b>① <b>躺角</b>为厂商标称值——装车后因外壳挤压普遍「吃角度」缩水，标称 170° 的装车实际明显更小，纸面参数仅作参考，新生儿务必线下试装看实际躺角；② <b>智能监测</b>分两档：安装指示灯（亮灯提示装没装对）≠ 传感器报警（装错会主动响），买前问清是哪档；③ <b>通风</b>分两档：被动透气面料 ≠ 风扇主动吸风，且风扇只能加速空气流动、<b>不能制冷降温</b>，夏天别抱过高预期；④ 「未采集」＝公开渠道查不到完整参数，<b>≠ 配置差、不作扣分依据</b>——可向商家索要结构件图或实物标签照片确认；⑤ Cybex / 迈可适的 ADAC 成绩为<b>欧洲欧版样品送测</b>，国行版本零部件存在改动风险，国行无独立公开测试报告；⑥ 装车适配风险（后排地板凸起、老车 ISOFIX 空间）因车而异，见下方「装车与使用避坑」。</div>
   </div>
 
   <!-- 价格对比表 -->
   <div class="section" id="s9">
-    <h2><span class="no">09</span>比价表（按价格升序 · 参考价 · 元/年 · 配置计分）</h2>
-    <p class="section-desc">价格为参考价（2026-08 采集）：取近期电商常卖到手价，吊牌价常高于此，「到手区间」为大促-常卖价波动带。配置计分=8 项硬配置逐项计数（钢骨架/一体注塑壳体、EPP 或 EPS 缓冲、强化或动态侧防、支撑腿、360°旋转、安装监测指示、主动通风、大躺角），依据公开参数计数，作者整理；千元档三款公开参数不完整，计分暂标「未采集」，不代表配置低。</p>
+    <h2><span class="no">09</span>比价表（按价格升序 · 参考价 · 元/年 · 宣传功能计数）</h2>
+    <p class="section-desc">价格为参考价（2026-08 采集）：取近期电商常卖到手价，吊牌价常高于此，「到手区间」为大促-常卖价波动带。<b>宣传功能计数</b>＝8 项硬配置逐项计数（钢骨架/一体注塑壳体、EPP 或 EPS 缓冲、强化或动态侧防、支撑腿、360°旋转、安装监测指示、主动通风、大躺角），依据公开参数计数，作者整理——<b>只统计商家宣传的功能清单，不代表实际碰撞防护水平，不能用来评判安全高低</b>（同样叫钢骨架，钢材厚度与结构贯穿性差异巨大），仅看功能齐全度。千元档三款公开参数不完整，暂标「未采集」，不代表配置低。元/年为理论摊薄值，0-12 岁款现实中很少用满 12 年。</p>
     <div class="matrix-wrap"><table id="price"></table></div>
   </div>
 
-  <!-- 选购建议 -->
+  <!-- 装车与使用避坑 -->
   <div class="section" id="s10">
-    <h2><span class="no">10</span>选购建议：先定档，再对号入座</h2>
-    <p class="section-desc">没有「最好的座椅」，只有「最对路的那台」。按价格档 + 家庭情况推荐，不搞单一冠军；价格为参考价（2026-08 采集）。</p>
+    <h2><span class="no">10</span>装车与使用避坑（参数表里查不到的 6 件事）</h2>
+    <p class="section-desc">以下都是「纸面对比」覆盖不到、但真实踩坑率极高的点——比表格里任何一行参数都值得花两分钟读完。</p>
+    <div class="avoid-grid">
+      <div class="avoid-card">
+        <h3>🚗 先确认「装不装得进」再下单</h3>
+        <p>座椅买回来装不进自家车，是安全座椅差评区第一大坑：① <b>支撑腿对后排地板凸起敏感</b>——SUV / 中大型车地板凸起常见，支撑腿无法完全触地等于虚设；② <b>老车型 ISOFIX 间距窄</b>，宽体大座舱款可能卡不进去；③ 下单前问客服两件事：<b>是否支持安全带安装</b>（备选方案）、支撑腿档位范围；能线下先装一次最稳。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>♻️ 二手座椅三条红线</h3>
+        <p>① <b>来历不明的不买</b>——无法确认是否经历过碰撞；② <b>经历过碰撞的座椅，无论外观多完好，直接报废</b>——壳体内部可能已有看不见的裂纹；③ 塑料壳体有<b>「出厂有效期」</b>（通常 6-9 年，看壳体上刻印标签），材料会老化、防护性能衰减，超期货白送也别用。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>📜 证书核验实操</h3>
+        <p>3C 证书可到<b>国家认证认可信息公共服务平台</b>按证书编号查询真伪；i-Size 认的是<b>座椅本体侧面的橙色标签</b>（E-mark 编号 + 身高分档），别只看电商详情页的渲染图——P 图比你想的容易。到手第一件事：核对实物标签与详情页宣称是否一致。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>🔄 「15 个月」是底线不是上限</h3>
+        <p>i-Size 强制 <b>15 个月前必须反向乘坐</b>（法规底线），但<b>不等于最大只能反向坐到 15 个月</b>——部分型号支持反向坐到 4 岁（105cm）。反向越久，急刹时对颈椎的保护越多，<b>能多反向一岁是一岁</b>，别急着给娃转正向。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>📏 看身高，不看年龄</h3>
+        <p>所有 i-Size 分组都按<b>身高（cm）</b>划分，不按年龄——同龄孩子身高差能到 10cm+。判断该不该换组：看孩子头顶与头枕上限的距离、肩带位置是否低于肩膀，<b>不看生日</b>。0-12 岁款宣传的 150cm 上限也要实测验证：不少孩子 135-140cm 就顶头坐不下了。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>🧥 冬天大忌：穿羽绒服坐座椅</h3>
+        <p>厚羽绒服会让安全带与身体之间留出大量空隙，碰撞瞬间羽绒压缩、孩子大幅位移，<b>约束形同虚设</b>。正确做法：上车先脱外套，冷了用毯子<b>盖在系好的安全带外面</b>。另外到手后建议顺手查一下该型号的<b>缺陷召回记录</b>（市场监管总局缺陷产品召回中心网站）。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 选购建议 -->
+  <div class="section" id="s11">
+    <h2><span class="no">11</span>选购建议：先定档，再对号入座</h2>
+    <p class="section-desc">没有「最好的座椅」，只有「最对路的那台」——<b>没有绝对最好，匹配自家车、孩子身高与预算节奏才最重要</b>。以下推荐含作者主观倾向，按价格档 + 家庭情况给出，不搞单一冠军；价格为参考价（2026-08 采集）。</p>
     <div class="matrix-wrap"><table>
       <tr><th style="width:8%">档位</th><th style="width:24%">你的情况</th><th style="width:22%">优先看</th><th>为什么</th><th style="width:20%">注意</th></tr>
       <tr><td class="dim" rowspan="3">¥1000-2000</td><td class="dim">预算 1500 内 + 认证优先</td><td><b>宝贝第一 星护</b>（¥1399）</td><td>千元档「认证+配置」最齐锚点款：3C + i-Size（R129），EPP 全包裹侧防 + 隐藏钢骨架 + 一体注塑，2025 年 618 曾冲进天猫品类 TOP3。</td><td>细项参数以详情页为准；无公开第三方碰撞成绩。</td></tr>
@@ -355,13 +422,22 @@ const products = [
     rows:{ "适用范围":"40-105cm（0-4岁）", "认证":"3C + i-Size", "骨架/壳体":"钢骨架+一体注塑", "缓冲":"G-CELL 高分子", "侧防":"G-CELL 侧防模块", "旋转":"360° + 侧滑出舱", "躺角":"165°", "通风":"ClimaFlow 透气系统", "智能监测":"安装指示灯" } },
 ];
 
-// ===== 按档分组渲染卡片 =====
+// ===== 段位推断（从「适用范围」解析） =====
+function stageOf(p){
+  const s = p.rows["适用范围"] || "";
+  if(/0-4/.test(s)) return "0-4";
+  if(/0-12|3-12/.test(s)) return "0-12";
+  if(/0-7/.test(s)) return "0-7";
+  return "-";
+}
+
+// ===== 按档分组渲染卡片（带筛选标记） =====
 document.getElementById('tierList').innerHTML = [1,2,3].map(t=>{
   const list = products.filter(p=>p.tier===t);
-  return `<div class="tier-head ${TIERS[t].cls}"><span class="t-emoji">${TIERS[t].emoji}</span>${TIERS[t].label}<small>${list.length} 款</small></div>
+  return `<div class="tier-block" data-tier="${t}"><div class="tier-head ${TIERS[t].cls}"><span class="t-emoji">${TIERS[t].emoji}</span>${TIERS[t].label}<small>${list.length} 款</small></div>
     <div class="tier-sum">${TIERS[t].sum}</div>
     <div class="cards">${list.map(p=>`
-      <div class="card" style="--tc:${TIERS[p.tier].color}">
+      <div class="card" style="--tc:${TIERS[p.tier].color}" data-stage="${stageOf(p)}" data-tier="${p.tier}">
         <span class="origin${p.origin==='import'?' imp':''}">${p.origin==='import'?'进口':'国产'}</span>
         <h3>${p.name}</h3>
         <div class="tagline">${p.tag}</div>
@@ -369,8 +445,29 @@ document.getElementById('tierList').innerHTML = [1,2,3].map(t=>{
         <div class="unit">约 ${Math.round(p.price/p.years)} 元/年 · 覆盖 ${p.years} 年</div>
         <ul>${Object.entries(p.rows).slice(0,4).map(([k,v])=>`<li><span>${k}</span><b>${v}</b></li>`).join('')}
         <li><span>ADAC</span><b>${p.adac}</b></li></ul>
-      </div>`).join('')}</div>`;
+      </div>`).join('')}</div></div>`;
 }).join('');
+
+// ===== 卡片筛选（段位 + 档位） =====
+const fState = { stage:'all', tier:'all' };
+function applyFilter(){
+  document.querySelectorAll('#tierList .card').forEach(c=>{
+    const okS = fState.stage==='all' || c.dataset.stage===fState.stage;
+    const okT = fState.tier==='all'  || c.dataset.tier===fState.tier;
+    c.style.display = (okS && okT) ? '' : 'none';
+  });
+  document.querySelectorAll('#tierList .tier-block').forEach(b=>{
+    const okT = fState.tier==='all' || b.dataset.tier===fState.tier;
+    const hasVis = [...b.querySelectorAll('.card')].some(c=>c.style.display!=='none');
+    b.style.display = (okT && hasVis) ? '' : 'none';
+  });
+}
+document.querySelectorAll('.fbtn').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll(`.fbtn[data-f="${btn.dataset.f}"]`).forEach(x=>x.classList.remove('on'));
+  btn.classList.add('on');
+  fState[btn.dataset.f] = btn.dataset.v;
+  applyFilter();
+}));
 
 // ===== 柱体渐变工具 =====
 function grad(color){
@@ -428,20 +525,21 @@ barYear.setOption({
   }]
 });
 
-// ===== 详细对比表 =====
+// ===== 详细对比表（含段位行 + 风险高亮） =====
 const keys = ["适用范围","认证","骨架/壳体","缓冲","侧防","旋转","躺角","通风","智能监测"];
 document.getElementById('matrix').innerHTML =
   `<tr><th>维度</th>${products.map(p=>`<th>${p.short.replace(/\n/g,'<br>')}</th>`).join('')}</tr>` +
   `<tr><td class="dim">价格档</td>${products.map(p=>`<td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td>`).join('')}</tr>` +
+  `<tr><td class="dim">使用段位</td>${products.map(p=>{ const s=stageOf(p); return `<td${s==='0-12'?' class="risk"':''}>${s}${s==='0-12'?'<br><small>全龄·妥协见03</small>':''}</td>`; }).join('')}</tr>` +
   `<tr><td class="dim">品牌</td>${products.map(p=>`<td>${p.brand}<br>（${p.origin==='import'?'进口':'国产'}）</td>`).join('')}</tr>` +
   `<tr><td class="dim">参考价</td>${products.map(p=>`<td class="hl">¥${p.price}</td>`).join('')}</tr>` +
-  `<tr><td class="dim">ADAC 公开成绩</td>${products.map(p=>`<td>${p.adac}</td>`).join('')}</tr>` +
+  `<tr><td class="dim">ADAC 公开成绩</td>${products.map(p=>`<td${/送测/.test(p.adac)?' class="risk"':''}>${p.adac}${/送测/.test(p.adac)?'<br><small>欧版样品·国行无独立报告</small>':''}</td>`).join('')}</tr>` +
   keys.map(k=>`<tr><td class="dim">${k}</td>${products.map(p=>`<td>${p.rows[k]||'-'}</td>`).join('')}</tr>`).join('');
 
 // ===== 比价表 =====
 document.getElementById('price').innerHTML =
-  `<tr><th>价格档</th><th>产品</th><th>参考价</th><th>到手区间</th><th>覆盖年限</th><th>元/年</th><th>配置计分(8项)</th></tr>` +
-  products.map(p=>`<tr><td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td><td>${p.name}</td><td>¥${p.price}</td><td>¥${p.priceRange}</td><td>${p.years} 年</td><td class="hl">${Math.round(p.price/p.years)}</td><td>${p.cfg}</td></tr>`).join('');
+  `<tr><th>价格档</th><th>产品</th><th>参考价</th><th>到手区间</th><th>覆盖年限</th><th>元/年</th><th>段位</th><th>宣传功能计数(8项)</th></tr>` +
+  products.map(p=>`<tr><td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td><td>${p.name}</td><td>¥${p.price}</td><td>¥${p.priceRange}</td><td>${p.years} 年</td><td class="hl">${Math.round(p.price/p.years)}</td><td>${stageOf(p)}</td><td>${p.cfg}</td></tr>`).join('');
 
 // ===== 回到顶部 =====
 const toTop = document.getElementById('toTop');
