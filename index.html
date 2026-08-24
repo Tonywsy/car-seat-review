@@ -140,6 +140,16 @@
     opacity:0; pointer-events:none; transition:.25s; }
   #toTop.show{ opacity:1; pointer-events:auto; }
 
+  /* ===== 同系列引流条（与疫苗页同款结构，配色对齐本页橙蓝体系） ===== */
+  .series-bar { background:linear-gradient(135deg,#fff4ec,#fffaf6); border:1px solid #ffd9c4; }
+  .series-cards { display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; }
+  .series-card { flex:1 1 220px; display:flex; flex-direction:column; gap:5px; background:#fff; border:1px solid #ffd9c4; border-radius:12px; padding:16px 18px; text-decoration:none; color:var(--navy); box-shadow:0 2px 8px rgba(255,122,69,.08); transition:transform .15s, box-shadow .15s; }
+  .series-card:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(255,122,69,.18); border-color:var(--accent); }
+  .series-card .sc-emoji { font-size:26px; line-height:1; }
+  .series-card b { font-size:16px; color:var(--navy); }
+  .series-card .sc-sub { font-size:13px; color:#666; }
+  .series-note { margin-top:12px; font-size:13px; color:#8f5600; font-weight:600; }
+
   @media (max-width:640px){
     .hero h1{ font-size:27px; } .hero .badge{ min-width:88px; padding:8px 12px; }
     .section{ padding:20px 16px; }
@@ -368,6 +378,30 @@
         <p><b>三步走：</b>① 先读 03 段位之争 + 10 装车避坑，建立基本判断；② 定预算档 + 目标年龄段，用 05 筛选 / 09 比价表筛出 2-3 款；③ 线下试坐（看实际躺角、座舱宽度、肩带位置）+ 实车装车验证接口与地板凸起 + 核对座椅本体刻印标签与 3C 证书，再下单。</p>
       </div>
     </div>
+  </div>
+
+  <!-- 同系列引流（与疫苗页同款） -->
+  <div class="section series-bar">
+    <h2>葵爸同系列测评</h2>
+    <p class="section-desc">安全座椅只是出行安全的一环，吃穿用防一样不能马虎——这些硬核横评也值得你收藏：</p>
+    <div class="series-cards">
+      <a class="series-card" href="https://tonywsy.github.io/newborn-vaccine-review/">
+        <span class="sc-emoji">💉</span>
+        <b>新生儿疫苗大横评</b>
+        <span class="sc-sub">免费/自费怎么选，一篇讲透</span>
+      </a>
+      <a class="series-card" href="https://tonywsy.github.io/baby-formula-comparison/">
+        <span class="sc-emoji">🍼</span>
+        <b>奶粉大横评</b>
+        <span class="sc-sub">国产1段性价比，谁在收智商税？</span>
+      </a>
+      <a class="series-card" href="https://tonywsy.github.io/diaper-review/">
+        <span class="sc-emoji">👶</span>
+        <b>纸尿裤 / 拉拉裤横评</b>
+        <span class="sc-sub">反渗·透气·性价比实测</span>
+      </a>
+    </div>
+    <p class="series-note">奶粉横评还有「进口高端 / 进口对比 / 国产对比」版本，进口奶粉怎么挑看那篇 → 关注葵爸主页看更多硬核测评</p>
   </div>
 
   <div class="disclaimer">
