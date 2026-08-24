@@ -390,7 +390,7 @@
   <!-- FAQ（豆包复核建议⑥） -->
   <div class="section" id="s13">
     <h2><span class="no">13</span>常见问题 FAQ</h2>
-    <p class="section-desc">三个高频问题，一句话答清楚——没时间细看的家长，读这一节就够了。</p>
+    <p class="section-desc">几个高频问题，一句话答清楚——没时间细看的家长，读这一节就够了。</p>
     <div class="avoid-grid">
       <div class="avoid-card">
         <h3>❓ 没有 ADAC 公开成绩 = 不安全吗？</h3>
@@ -403,6 +403,10 @@
       <div class="avoid-card">
         <h3>❓ 表格这么多，到底该怎么选？</h3>
         <p><b>三步走：</b>① 先读 03 段位之争 + 10 装车避坑，建立基本判断；② 定预算档 + 目标年龄段，用 05 筛选 / 09 比价表筛出 2-3 款；③ 线下试坐（看实际躺角、座舱宽度、肩带位置）+ 实车装车验证接口与地板凸起 + 核对座椅本体刻印标签与 3C 证书，再下单。</p>
+      </div>
+      <div class="avoid-card">
+        <h3>❓ 配置得分越高，撞车就越安全吗？</h3>
+        <p><b>不等于。</b>本页 s12「推荐总分」是基于品牌官网 / 电商公开宣传参数的<b>纸面配置得分</b>，无拆机、无实车碰撞测试、无法识别参数虚标；它只用来<b>筛掉明显短板、初选 2-3 个候选</b>，不能等同于真实碰撞表现，更不能直接当「第一名 / 最优选」照分数下单。最终一定要核对座椅本体刻印标签，条件允许尽量线下试装试坐。</p>
       </div>
     </div>
   </div>
@@ -622,13 +626,13 @@ document.getElementById('matrix').innerHTML =
 
 // ===== 比价表 =====
 document.getElementById('price').innerHTML =
-  `<tr><th>价格档</th><th>产品</th><th>参考价</th><th>到手区间</th><th>覆盖年限</th><th>元/年</th><th>段位</th><th>宣传功能计数(8项)</th></tr>` +
+  `<tr><th>价格档</th><th>产品</th><th>参考价</th><th>到手区间</th><th title="厂商标称最大适用周期；塑料壳体老化以「壳体出厂生产日期」计算，壳体出厂 6-8 年建议更换，≠ 购买后可完整用满该年限（受身高顶头+老化双重影响）">覆盖年限</th><th>元/年</th><th>段位</th><th>宣传功能计数(8项)</th></tr>` +
   products.map(p=>`<tr><td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td><td>${p.name}</td><td>¥${p.price}</td><td>¥${p.priceRange}</td><td>${p.years} 年</td><td class="hl">${Math.round(p.price/p.years)}</td><td>${stageOf(p)}</td><td>${p.cfg}</td></tr>`).join('');
 
 // ===== 葵爸主观推荐榜（加权评分，安全配置优先） =====
 const WEIGHTS = { "碰撞安全":26, "安装防错":12, "约束系统":4, "体型适配":3, "价格实惠":20, "便捷交互":12, "乘坐舒适":13, "成长覆盖":10 };
 function recScore(p){ return dims.reduce((s,d)=> s + (p.metrics[d]||0)*WEIGHTS[d], 0) / 5; }
-const certOf = p => /茧之旅/.test(p.name) ? "3C" : "i-Size(R129)";
+const certOf = p => /i-Size/i.test(p.rows["认证"]||"") ? "3C + i-Size(R129)" : "3C";
 const RECS = {
   "迈可适 Mica 360 Pro": { badge:"🛡 安全标杆", note:"碰撞安全+安装防错双满分，唯二 ADAC 送测，安全冗余最可验证；代价是 0-4 专龄、元/年最高。" },
   "Cybex Sirona Gi": { badge:"🛡 安全标杆", note:"碰撞安全满分 + ADAC 2024 总评 2.2（Gut），可验证安全代表；安全性子项公开渠道未单列，0-4 专龄款。" },
@@ -652,7 +656,7 @@ document.getElementById('recTable').innerHTML =
     <td style="text-align:left;font-weight:600">${p.name}</td>
     <td style="color:${TIERS[p.tier].color};font-weight:700">${TIERS[p.tier].label.split(' · ')[0]}</td>
     <td style="white-space:nowrap;font-size:12px"><b>${certOf(p)}</b></td>
-    <td>${p.metrics["碰撞安全"]}·${p.metrics["约束系统"]}·${p.metrics["体型适配"]}/5${/送测/.test(p.adac)?' <span style="color:#C0392B;font-weight:700">ADAC✅</span>':''}</td>
+    <td title="${/送测|冠军|winner|同级|宣称/.test(p.adac)?'ADAC 官方无「冠军 / winner」评级称谓；「组别冠军 / 同级 winner / test winner」均为品牌营销话术，非独立送测成绩；送测样品为欧洲欧版，国行无独立公开报告':'ADAC 成绩为欧洲欧版样品送测，国行版本无独立公开测试报告'}">${p.metrics["碰撞安全"]}·${p.metrics["约束系统"]}·${p.metrics["体型适配"]}/5${/送测/.test(p.adac)?' <span style="color:#C0392B;font-weight:700">ADAC✅</span>':''}</td>
     <td class="hl">${recScore(p).toFixed(1)}</td>
     <td style="white-space:nowrap"><b>${RECS[p.name]?RECS[p.name].badge:'—'}</b></td>
     <td style="text-align:left;font-size:12.5px;color:#556">${RECS[p.name]?RECS[p.name].note:''}</td>
